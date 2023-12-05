@@ -177,31 +177,38 @@
 # консоль. Ȃараметры метода: ссылка
 # на дом и размер скидки\
 
-# class House:
-#     def __init__(self, area, price):
-#         self._area = area
-#         self._price = price
-#
-#     def final_price(self, sale):
-#         final_sale = self._price - sale
-#         return final_sale
-#
-# class SmallHouse(House):
-#     default_area = 40
-#     def __init__(self, price):
-#         super().__init__(SmallHouse.default_area, price)
-#
-# small_house = SmallHouse(5)
-#
-# class Human:
-#     def __init__(self, money = 100):
-#         self.money = money
-#     def __make_deal(house: House, price):
-#
-#
-#
-#     def buy_house(house: House, sale):
-#         pass
+class House:
+    def __init__(self, area, price):
+        self._area = area
+        self._price = price
+
+    def final_price(self, dis):
+        final_dic = self._price - dis
+        return final_dic
+
+class SmallHouse(House):
+
+    default_area = 40
+    def __init__(self, price):
+        super().__init__(SmallHouse.default_area, price)
+
+class Human:
+    __money = 100
+    __house = None
+
+    def __make_deal(self, house, price):
+        self.__money -= price
+        self.__house = house
+
+    def buy_house(self, house, dis):
+        price = house.final_price()
+        if self.__money >= price:
+            self.__make_deal(house,price)
+        else:
+            print(f'Не хватает денег!!!')
+
+
+
 
 
 
