@@ -60,7 +60,7 @@ class Tomato:
 
 class TomatoBush:
     def __init__(self, count_tomato):
-        self.tomatoes = [Tomato(1) for _ in range(count_tomato)]
+        self.tomatoes = [Tomato(i) for i in range(count_tomato)]
 
     def grow_all(self):
         for item in self.tomatoes:
